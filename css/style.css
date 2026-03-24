@@ -287,8 +287,12 @@ nav a:hover::after {
   border-radius: 12px;
   overflow: hidden;
   transition: 0.4s ease;
-}
+  padding: 20px;
 
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
 .portfolio-card img {
   width: 100%;
   height: 180px;
@@ -305,27 +309,12 @@ nav a:hover::after {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 .portfolio-card h4 {
-  padding: 20px;
-
-  .portfolio-info {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
-    padding: 0 20px;
-  }
-
-  .portfolio-card.active .portfolio-info {
-    max-height: 200px;
-    opacity: 1;
-    padding: 20px;
-  }
-
-  .portfolio-card.active {
-    transform: scale(1.03);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-  }
-} /* PERÍCIA */
+  margin: 15px 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  min-height: 48px; /* mantém todos alinhados */
+}
+/* PERÍCIA */
 .expertise {
   padding: 120px 0;
   background-image: url("../assets/images/pericia.png");
