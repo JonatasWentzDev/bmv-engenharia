@@ -76,3 +76,27 @@ Mensagem: ${mensagem}`;
 
     window.open(url, "_blank");
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".portfolio-card img").forEach((img) => {
+    img.addEventListener("click", function (e) {
+      e.stopPropagation(); // 🔥 evita conflito com clique do card
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    });
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = function (e) {
+    if (e.target !== modalImg) {
+      modal.style.display = "none";
+    }
+  };
+});
